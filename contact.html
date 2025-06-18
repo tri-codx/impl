@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Indianeers - Contact Us</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Food Safety Training, FoSTaC, FSSAI, Indianeers, contact, skill development" name="keywords">
+    <meta content="Contact Indianeers Media Private Limited for FSSAI-approved FoSTaC training, skill development, or tender inquiries." name="description">
+
+    <!-- Favicon -->
+    <link href="https://via.placeholder.com/32" rel="icon" alt="Indianeers favicon" loading="lazy">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;" aria-label="Loading"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <!-- Placeholder for Header -->
+    <div id="header-placeholder"></div>
+    <!-- Navbar End -->
+     
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <h1 class="display-3 mb-4 animated slideInDown">Contact Indianeers</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Contact</p>
+                    <h1 class="display-5 mb-4">Get in Touch for FoSTaC Training & Inquiries</h1>
+                    <p class="mb-4">Reach out to Indianeers Media Private Limited for information about FSSAI-approved FoSTaC training, skill development programs, or tender opportunities. Fill out the form below, and our team will respond promptly.</p>
+                    <form action="/submit" method="POST" id="contactForm" aria-label="Contact Indianeers form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-label="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required aria-required="true" aria-label="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Your Mobile" required aria-required="true" pattern="[0-9]{10}" aria-label="Your Mobile Number (10 digits)">
+                                    <label for="mobile">Your Mobile</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required aria-required="true" aria-label="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 100px;" required aria-required="true" aria-label="Your Message"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div id="formFeedback" class="alert d-none" role="alert" aria-live="polite"></div>
+                                <button class="btn btn-primary py-3 px-5" type="submit" aria-label="Submit form">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                    <script>
+                        // Client-side form validation
+                        document.getElementById('contactForm').addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const email = document.getElementById('email').value;
+                            const mobile = document.getElementById('mobile').value;
+                            const feedback = document.getElementById('formFeedback');
+                            
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!emailRegex.test(email)) {
+                                feedback.className = 'alert alert-danger';
+                                feedback.textContent = 'Please enter a valid email address.';
+                                feedback.classList.remove('d-none');
+                                return;
+                            }
+                            
+                            if (mobile.length !== 10 || isNaN(mobile)) {
+                                feedback.className = 'alert alert-danger';
+                                feedback.textContent = 'Please enter a valid 10-digit mobile number.';
+                                feedback.classList.remove('d-none');
+                                return;
+                            }
+                            
+                            feedback.className = 'alert alert-success';
+                            feedback.textContent = 'Form data validated! Ready to submit...';
+                            feedback.classList.remove('d-none');
+                            // Note: Actual submission requires server-side handling
+                            // this.form.submit(); // Uncomment for production with backend
+                        });
+                    </script>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px;">
+                    <div class="position-relative rounded overflow-hidden h-100">
+                        <iframe class="position-relative w-100 h-100"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.6732926952567!2d77.21672131508145!3d28.54994198245251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2a99b7b7b5b%3A0x1b0b8b0b8b8b8b8b!2sDelhi%2C%20India!5e0!3m2!1sen!2sin!4v1698241234567!5m2!1sen!2sin"
+                            frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <!-- Placeholder for Footer -->
+    <div id="footer-placeholder"></div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+    //load header and footer
+$(document).ready(function() {
+    console.log("main.js loaded");
+
+    // Load header
+    $("#header-placeholder").load("header.html", function(response, status, xhr) {
+        if (status == "error") {
+            console.error("Error loading header: " + xhr.status + " " + xhr.statusText);
+        } else {
+            console.log("Header loaded successfully");
+            // Highlight active link
+            var page = window.location.pathname.split("/").pop() || "index.html";
+            $(".navbar-nav .nav-link").each(function() {
+                if ($(this).attr("href") === page) {
+                    $(this).addClass("active");
+                } else if ($(this).hasClass("dropdown-toggle")) {
+                    // Check dropdown items for active page
+                    var dropdownItems = $(this).next(".dropdown-menu").find(".dropdown-item");
+                    dropdownItems.each(function() {
+                        if ($(this).attr("href") === page) {
+                            $(this).addClass("active");
+                            $(this).closest(".nav-item").find(".dropdown-toggle").addClass("active");
+                        }
+                    });
+                }
+            });
+        }
+    });
+
+    // Load footer
+    $("#footer-placeholder").load("footer.html", function(response, status, xhr) {
+        if (status == "error") {
+            console.error("Error loading footer: " + xhr.status + " " + xhr.statusText);
+        } else {
+            console.log("Footer loaded successfully");
+        }
+    });
+
+    // Hide spinner
+    setTimeout(function() {
+        $("#spinner").removeClass("show");
+    }, 2000);
+
+    // Initialize WOW.js
+    new WOW().init();
+
+    // Initialize Owl Carousel
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 3 }
+        }
+    });
+});
+</script>
+
+</body>
+
+</html>
